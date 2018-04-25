@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+pre {
+    margin: 0;
+}
+
 ::selection {
     background-color: map-deep-get($colors, "gold", "default");
 }

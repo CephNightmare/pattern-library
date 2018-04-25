@@ -2,7 +2,7 @@
     <nav class="sideNav">
         <ul class="sideNav__list">
             <li v-for="nav in this.navigation" class="sideNav__listItem">
-                <router-link :to="{path: nav.template}" active-class="sideNav__listLink--active" class="sideNav__listLink">{{ nav.name }}</router-link>
+                <router-link :to="{path: nav.path}" active-class="sideNav__listLink--active" class="sideNav__listLink">{{ nav.name }}</router-link>
             </li>
         </ul>
     </nav>

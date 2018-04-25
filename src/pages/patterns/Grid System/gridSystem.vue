@@ -108,6 +108,12 @@
         <content-section>
             <h2>Common layout options</h2>
 
+            <div class="text">
+                <p>
+                    Whenever we build our website, we usually start with the general layout of the page. More often than
+                    not, these are the common patterns we see repeated in design.
+                </p>
+            </div>
             <column-block blockTitle="24/24">
                 <div class="row columnBlock__row">
                     <div class="small-24 column">
@@ -140,6 +146,80 @@
                     </div>
                 </div>
             </column-block>
+
+            <column-block blockTitle="6/24 - 6/24 - 6/24 - 6/24">
+                <div class="row columnBlock__row">
+                    <div class="small-6 column">
+                        <div class="columnBlock__innerColumn">1</div>
+                    </div>
+                    <div class="small-6 column">
+                        <div class="columnBlock__innerColumn">2</div>
+                    </div>
+                    <div class="small-6 column">
+                        <div class="columnBlock__innerColumn">3</div>
+                    </div>
+                    <div class="small-6 column">
+                        <div class="columnBlock__innerColumn">4</div>
+                    </div>
+                </div>
+            </column-block>
+
+            <column-block blockTitle="18/24 - 6/24">
+                <div class="row columnBlock__row">
+                    <div class="small-18 column">
+                        <div class="columnBlock__innerColumn">1</div>
+                    </div>
+                    <div class="small-6 column">
+                        <div class="columnBlock__innerColumn">2</div>
+                    </div>
+                </div>
+            </column-block>
+
+            <!--<note>-->
+            <!--<div class="row">-->
+            <!--<div class="small-12 float-left">-->
+            <!--<highlight-code lang="html">-->
+            <!--&lt;div class="row"&gt;-->
+            <!--&#9;&lt;div class="small-12 column"&gt;-->
+            <!--&#9;&lt;/div&gt;-->
+            <!--&#9;&lt;div class="small-10 column end"&gt;-->
+            <!--&#9;&lt;/div&gt;-->
+            <!--&lt;/div&gt;-->
+            <!--</highlight-code>-->
+            <!--</div>-->
+            <!--<div class="small-12 column">-->
+            <!--<h3>Notes</h3>-->
+
+            <!--<div class="text">-->
+            <!--<p>-->
+            <!---->
+            <!--</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</note>-->
+        </content-section>
+
+        <content-section>
+            <h2>Grid alignment</h2>
+
+            <column-block>
+                <div class="row columnBlock__row">
+                    <div class="small-16 small-centered column">
+                        <div class="columnBlock__innerColumn">1</div>
+                    </div>
+                </div>
+            </column-block>
+
+            <div class="text">
+                <p>
+                    This code is imported in our Front-End solution. This can be done in a myriad of different ways. The
+                    individual projects will require different import methods, therefore we do not write out any
+                    requirements
+                    here.
+                </p>
+            </div>
+
         </content-section>
     </div>
 

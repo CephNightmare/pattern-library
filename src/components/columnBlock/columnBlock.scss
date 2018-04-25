@@ -1,5 +1,5 @@
 .columnBlock {
-    margin-top: rem-calc(32);
+    margin-bottom: rem-calc(32);
 
     &__row {
         background-color: map-deep-get($colors, "blue", "light");

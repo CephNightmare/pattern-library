@@ -1,6 +1,6 @@
 <template>
     <div class="columnBlock">
-        <h3>{{ this.blockTitle }}</h3>
+        <h3 v-if="this.blockTitle">{{ this.blockTitle }}</h3>
         <slot></slot>
     </div>
 </template>

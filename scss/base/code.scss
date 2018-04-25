@@ -1,6 +1,6 @@
 .code {
-    margin-bottom: rem-calc(32);
     position: relative;
+    margin-bottom: rem-calc(32);
 
     ::selection {
         background-color: map-deep-get($colors, "grey", "default");

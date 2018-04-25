@@ -7,15 +7,15 @@ export default {
             navigation: [
                 {
                     name: 'Grid System',
-                    template: 'grid-system'
+                    path: '/patterns/grid-system'
                 },
                 {
                     name: 'Layout Components',
-                    template: 'layout-components'
+                    path: '/patterns/layout-components'
                 },
                 {
                     name: 'Typography',
-                    template: 'typography'
+                    path: '/patterns/typography'
                 }
             ]
         }
