@@ -1,0 +1,19 @@
+.columnBlock {
+    margin-top: rem-calc(32);
+
+    &__row {
+        background-color: map-deep-get($colors, "blue", "light");
+        overflow: hidden;
+        padding: rem-calc(16) 0;
+    }
+
+    &__innerColumn {
+        @include flex-align-center();
+        justify-content: center;
+        background-color: map-deep-get($colors, "blue", "default");
+        color: map-deep-get($colors, "white", "default");
+        font-size: rem-calc(32);
+        font-weight: 700;
+        height: rem-calc(100);
+    }
+}

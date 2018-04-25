@@ -1,0 +1,27 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Kanit:200");
+
+//
+// Typography
+$font-family: "Kanit", "Helvetica Neue", sans-serif;
+$global-font-size: 16px;
+
+//
+// Colors
+$colors: (
+    "black": ("default": #1E1E24),
+    "blue": ("default": #7282B4, "light": #BBC8F0),
+    "grey": ("default": #F5F5F5, "dark": #BBBBBB),
+    "white": ("default": #FFFDFD),
+    "green": ("default": #41B883),
+    "gold": ("default": #BEB48F, "light": #E0DBC8)
+);
+
+//
+// Transition defaults
+$transition-default-smoothing: ease-in-out;
+$transition-default-time: .2s;
+$transition-default: all $transition-default-time $transition-default-smoothing;
+
+//
+//Header
+$header-height: 80px;

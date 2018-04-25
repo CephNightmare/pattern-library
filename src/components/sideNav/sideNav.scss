@@ -1,0 +1,30 @@
+.sideNav {
+    font-size: rem-calc(18);
+    font-weight: 700;
+    $sideNav: &;
+
+    &__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__listLink {
+        color: map-deep-get($colors, "black", "default");
+        display: block;
+        border-radius: rem-calc(5);
+        padding: rem-calc(6) rem-calc(12);
+        margin-bottom: rem-calc(12);
+        transition: $transition-default;
+
+        &--active {
+            background-color: map-deep-get($colors, "gold", "default");
+        }
+
+        &:hover {
+            &:not(#{$sideNav}--active) {
+                background-color: map-deep-get($colors, "gold", "light");
+            }
+        }
+    }
+}

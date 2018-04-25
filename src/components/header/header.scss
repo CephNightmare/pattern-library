@@ -1,0 +1,28 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: map-deep-get($colors, "white", "default");
+    z-index: 10;
+    height: $header-height;
+    @include flex-align-center(true);
+
+    &__logo {
+        display: inline-block;
+        height: $header-height;
+        color: map-deep-get($colors, "black", "default");
+        padding: 0 rem-calc(20);
+        border-right: 1px solid map-deep-get($colors, "grey", "dark");
+        @include flex-align-center();
+
+        svg {
+            width: rem-calc(60);
+            height: rem-calc(60);
+        }
+    }
+
+    &__logoText {
+        margin-left: rem-calc(12);
+    }
+}

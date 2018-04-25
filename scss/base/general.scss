@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: map-deep-get($colors, "grey", "default");
+    min-height: 100vh;
+    margin: 0;
+}
+
+::selection {
+    background-color: map-deep-get($colors, "gold", "default");
+}
+
+.container {
+    min-height: 100vh;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}

@@ -1,0 +1,25 @@
+.code {
+    margin-bottom: rem-calc(32);
+    position: relative;
+
+    ::selection {
+        background-color: map-deep-get($colors, "grey", "default");
+    }
+
+    &__lang {
+        position: absolute;
+        right: rem-calc(16);
+        bottom: rem-calc(16);
+        font-size: rem-calc(11);
+        padding: rem-calc(2) rem-calc(4);
+        background-color: rgba(map-deep-get($colors, "white", "default"), .3);
+        color: rgba(map-deep-get($colors, "white", "default"), .6);
+        transition: $transition-default;
+        cursor: default;
+
+        &:hover {
+            background-color: rgba(map-deep-get($colors, "white", "default"), .6);
+            color: rgba(map-deep-get($colors, "white", "default"), .9);
+        }
+    }
+}
