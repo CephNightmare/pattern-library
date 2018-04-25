@@ -203,22 +203,29 @@
         <content-section>
             <h2>Grid alignment</h2>
 
-            <column-block>
+            <div class="text">
+                <p>
+                    Whenever laying our page out, we come across instances where the page layout requires more spacing
+                    than the usual gutters. This is where Grid Alignment options come in.
+                </p>
+            </div>
+
+            <h3>Centering columns</h3>
+
+            <div class="text">
+                <p>
+                    Using small-centered (or any breakpoint usage), as expected, centers the column regardless of the
+                    width of the component. The common trap is using something like small-offset-4. this should be
+                    avoided for centering column, due to the fact that you cannot center uneven columns this way.
+                </p>
+            </div>
+            <column-block blockTitle="16/24 - centered">
                 <div class="row columnBlock__row">
                     <div class="small-16 small-centered column">
                         <div class="columnBlock__innerColumn">1</div>
                     </div>
                 </div>
             </column-block>
-
-            <div class="text">
-                <p>
-                    This code is imported in our Front-End solution. This can be done in a myriad of different ways. The
-                    individual projects will require different import methods, therefore we do not write out any
-                    requirements
-                    here.
-                </p>
-            </div>
 
         </content-section>
     </div>

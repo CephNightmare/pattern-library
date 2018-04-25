@@ -4,6 +4,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    display: inline-block;
+    width: 100%;
 }
 
 h1, .h1 {
@@ -15,8 +17,6 @@ h1, .h1 {
 h2, .h2 {
     margin-bottom: rem-calc(8);
     margin-top: rem-calc(16);
-    width: 100%;
-    float: left;
 }
 
 h3, .h3 {
