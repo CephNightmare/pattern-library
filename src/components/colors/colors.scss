@@ -1,0 +1,24 @@
+.colors {
+    overflow: hidden;
+}
+
+.colorBlock {
+    border: 1px solid map-deep-get($colors, "grey", "dark");
+    padding: rem-calc(8);
+    margin-bottom: rem-calc(32);
+    background-color: map-deep-get($colors, "white", "default");
+
+    &__bg {
+        height: rem-calc(150);
+        border: 1px solid map-deep-get($colors, "grey", "default");
+    }
+
+    &__content {
+        margin-top: rem-calc(16);
+    }
+
+    &__row {
+        font-weight: 700;
+        display: block;
+    }
+}

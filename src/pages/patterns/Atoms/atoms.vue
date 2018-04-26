@@ -4,332 +4,98 @@
             <p>
                 Atoms are the basic building blocks for our website. Atoms can be described as the most simple html
                 elements, such as a button, an input or a label. Furthermore, atoms can be more abstract, by defining a
-                variety of variables such as colors, margins and transitions.
+                variety of variables such as colors, vertical spacing and transitions.
             </p>
         </textBlock>
 
         <content-section>
-            <h2>Setup</h2>
+            <h2>Color palette</h2>
 
             <textBlock>
                 <p>
-                    When setting up Foundation, we wanted to make sure that we did not include any unnecessary
-                    dependencies or code. Therefore we decided to implement the only the basic grid functionalities,
-                    along with some floating and visibility classes
+                    When the design is created, it is often important to define the different color structures
+                    accurately, and to omit any color usages that could be replaced with an already integrated color. In
+                    order to get a quick overview of all the colors, it is a best practice to group them. Grouping these
+                    colors are done like this.
                 </p>
             </textBlock>
 
             <codeBlock lang="scss">
-                // Sass utilities
-                @import '~foundation-sites/scss/util/util';
-                @import '~foundation-sites/scss/global';
-                @import '~foundation-sites/scss/foundation';
-
-                @include foundation-grid;
-
-                @include foundation-visibility-classes;
-                @include foundation-float-classes;
+                // Colors
+                $colors: (
+                &#9;"black": ("default": #1E1E24),
+                &#9;"blue": ("dark": #36446C, "default": #7282B4, "light": #BBC8F0),
+                &#9;"grey": ("dark": #BBBBBB, "default": #F5F5F5),
+                &#9;"white": ("default": #FFFDFD),
+                &#9;"green": ("default": #41B883),
+                &#9;"social": ("facebook": #41B883, "twitter": #41B883, "linkedin": #41B883)
+                );
             </codeBlock>
 
-            <textBlock>
-                <p>
-                    This code is included in our Front-End solution. This can be done in a myriad of different ways. The
-                    individual projects will require different include methods, therefore we do not write out any
-                    requirements
-                    here.
-                </p>
-            </textBlock>
-        </content-section>
+            <colors :colors="this.colors"></colors>
 
-        <content-section>
-            <h2>Settings</h2>
+            <h3>Usage</h3>
 
             <textBlock>
                 <p>
-                    Foundation provides several settings regarding the number of columns, width and gutters. We've
-                    chosen for a 24 column layout structure. In order to position elements correctly, we usually need
-                    more than 12 columns to accurately set up our layout. The settings look something like this:
+                    In order to use these grouped colors, you need to traverse through the array. Foundation proves to
+                    be useful here, providing a mixing that gives you the option to retrieve the different colors by
+                    their respective key.
                 </p>
             </textBlock>
 
             <codeBlock lang="scss">
-                // 1. Global
-                // ---------
+                .block {
+                &#9;background-color: map-deep-get($colors, "social", "facebook");
+                &#9;color: map-deep-get($colors, "white", "default");
+                }
+            </codeBlock>
+        </content-section>
 
-                $global-width: rem-calc(1440);
-                $body-antialiased: true;
+        <content-section>
+            <h2>Vertical spacing</h2>
 
+            <textBlock>
+                <p>
+                    Consistent use of margins is often difficult, and requires a lot of effort from designers. The
+                    upside when
+                    taking the time to create a vertical spacing grid however, isn't 'marginal'. >.>
+                </p>
+                <p>
+                    In fact, aside from the unity it creates in the design, it provides the option of scaling the
+                    vertical spacing based on breakpoints, instead of on every individual element. Consider using a
+                    vertical spacing group when building your website for refining your layout.
+                </p>
+            </textBlock>
 
-                // 2. Breakpoints
-                // --------------
-
-                $breakpoints: (
-                small: 0,
-                medium: 640px,
-                large: 1024px,
-                xlarge: 1200px,
-                xxlarge: 1440px,
+            <codeBlock lang="scss">
+                // Vertical Spacing
+                $verticalSpacing: (
+                &#9;"small": (1: 4px, 2: 8px, 3: 12x, 3: 16px, 4: 20px, 5: 24px, 6: 28px, 7: 32px),
+                &#9;"large": (1: 8px, 2: 16px, 3: 24px, 3: 32px, 4: 40px, 5: 48px, 6: 56px, 7: 64px)
                 );
-
-                $print-breakpoint: large;
-
-
-                // 3. The Grid
-                // -----------
-
-                $grid-row-width: $global-width;
-                $grid-column-count: 24;
-
-                $grid-column-gutter: (
-                small: 20px,
-                medium: 30px,
-                );
-
-                $grid-column-align-edge: true;
-                $grid-column-alias: 'columns';
-                $block-grid-max: 8;
             </codeBlock>
-
-            <textBlock>
-                <p>
-                    This code is imported in our Front-End solution. This can be done in a myriad of different ways. The
-                    individual projects will require different import methods, therefore we do not write out any
-                    requirements
-                    here.
-                </p>
-            </textBlock>
         </content-section>
 
         <content-section>
-            <h2>Common layout options</h2>
 
+            <h2>Basic Elements</h2>
             <textBlock>
                 <p>
-                    Whenever we build our website, we usually start with the general layout of the page. More often than
-                    not, these are the common patterns we see repeated in design.
+                    Throughout the website, different basic elements return often. This collection is not an exhaustive
+                    list, but a good starting point to implement in any website solution.
                 </p>
             </textBlock>
 
-            <column-block blockTitle="24/24">
-                <div class="columnBlock__row">
-                    <div class="small-24 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                </div>
-            </column-block>
+            <h3>Buttons</h3>
 
-            <column-block blockTitle="12/24 - 12/24">
-                <div class="columnBlock__row">
-                    <div class="small-12 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-12 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <column-block blockTitle="8/24 - 8/24 - 8/24">
-                <div class="columnBlock__row">
-                    <div class="small-8 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-8 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                    <div class="small-8 column">
-                        <div class="columnBlock__innerColumn">3</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <column-block blockTitle="6/24 - 6/24 - 6/24 - 6/24">
-                <div class="columnBlock__row">
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">3</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">4</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <column-block blockTitle="18/24 - 6/24">
-                <div class="columnBlock__row">
-                    <div class="small-18 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <!--<note>-->
-            <!--<div class="row">-->
-            <!--<div class="small-12 float-left">-->
-            <!--<highlight-code lang="html">-->
-            <!--&lt;div class="row"&gt;-->
-            <!--&#9;&lt;div class="small-12 column"&gt;-->
-            <!--&#9;&lt;/div&gt;-->
-            <!--&#9;&lt;div class="small-10 column end"&gt;-->
-            <!--&#9;&lt;/div&gt;-->
-            <!--&lt;/div&gt;-->
-            <!--</highlight-code>-->
-            <!--</div>-->
-            <!--<div class="small-12 column">-->
-            <!--<h3>Notes</h3>-->
-
-            <!--<div class="text">-->
-            <!--<p>-->
-            <!---->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</note>-->
-        </content-section>
-
-        <content-section>
-            <h2>Grid alignment</h2>
-
-            <textBlock>
-                <p>
-                    Whenever laying our page out, we come across instances where the page layout requires more spacing
-                    than the usual gutters. This is where Grid Alignment options come in.
-                </p>
-            </textBlock>
-
-            <h3>Centering columns</h3>
-
-            <textBlock>
-                <p>
-                    Using small-centered (or any breakpoint usage), as expected, centers the column regardless of the
-                    width of the component. The common trap is using something like small-offset-4. this should be
-                    avoided for centering a column, due to the fact that you cannot center uneven columns this way.
-                </p>
-            </textBlock>
-            <column-block blockTitle="17/24 - centered">
-                <div class="columnBlock__row">
-                    <div class="small-17 small-centered column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                </div>
-            </column-block>
-
+            <a href="#" class="button" @click.prevent>Primary Button</a>
+            <a href="#" class="button button--secondary" @click.prevent>Secondary Button</a>
+            <a href="#" class="button button--ghost" @click.prevent>Ghost Button</a>
             <codeBlock lang="html">
-                &lt;div class="row"&gt;
-                &#9;&lt;div class="small-17 small-centered column"&gt;
-                &#9;&lt;/div&gt;
-                &lt;/div&gt;
-            </codeBlock>
-
-            <h3>Layout offset</h3>
-
-            <textBlock>
-                <p>
-                    There are multiple options when using an offset. If you have a simple layout with a sidebar, you do
-                    not need offset classes to create room between the columns. You can just omit the 'end' class
-                    instead. however, offset classes are useful in the second example.
-                </p>
-            </textBlock>
-            <column-block blockTitle="16/24 - 6/24 - end class omitted">
-                <div class="columnBlock__row">
-                    <div class="small-17 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <codeBlock lang="html">
-                &lt;div class="row"&gt;
-                &#9;&lt;div class="small-17 column"&gt;
-                &#9;&lt;/div&gt;
-                &#9;&lt;div class="small-6 column"&gt;
-                &#9;&lt;/div&gt;
-                &lt;/div&gt;
-            </codeBlock>
-
-            <column-block blockTitle="6/24 - 10/24 - 6/24">
-                <div class="columnBlock__row">
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-10 small-offset-1 column">
-                        <div class="columnBlock__innerColumn">1</div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <codeBlock lang="html">
-                &lt;div class="row"&gt;
-                &#9;&lt;div class="small-6 column"&gt;
-                &#9;&lt;/div&gt;
-                &#9;&lt;div class="small-10 small-offset-1 column"&gt;
-                &#9;&lt;/div&gt;
-                &#9;&lt;div class="small-6 column"&gt;
-                &#9;&lt;/div&gt;
-                &lt;/div&gt;
-            </codeBlock>
-
-        </content-section>
-
-        <content-section>
-            <h2>Grid nesting</h2>
-
-            <textBlock>
-                <p>
-                    Although grid nesting is possible. We do not advice doing this. Gutter spacing and column layouts
-                    quickly become confusing and frustrating to use. If the situation requires it however, this is the
-                    best way to do it.
-                </p>
-            </textBlock>
-
-            <column-block blockTitle="Nested Grid layout">
-                <div class="columnBlock__row">
-                    <div class="small-18 column">
-                        <div class="columnBlock__innerColumn">
-                            <div class="row">
-                                <div class="small-12 column">
-                                    <div class="columnBlock__nestedColumn">1</div>
-                                </div>
-                                <div class="small-12 column">
-                                    <div class="columnBlock__nestedColumn">2</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="small-6 column">
-                        <div class="columnBlock__innerColumn">2</div>
-                    </div>
-                </div>
-            </column-block>
-
-            <codeBlock lang="html">
-                &lt;div class="row"&gt;
-                &#9;&lt;div class="small-18 column"&gt;
-                &#9;&#9;&lt;div class="row"&gt;
-                &#9;&#9;&#9;&lt;div class="small-12 column"&gt;
-                &#9;&#9;&#9;&lt;/div&gt;
-                &#9;&#9;&#9;&lt;div class="small-12 column"&gt;
-                &#9;&#9;&#9;&lt;/div&gt;
-                &#9;&#9;&lt;/div&gt;
-                &#9;&lt;/div&gt;
-                &#9;&lt;div class="small-6 column"&gt;
-                &#9;&lt;/div&gt;
-                &lt;/div&gt;
+                &lt;a href="#" class="button"&gt;Primary Button&lt;/a&gt;
+                &lt;a href="#" class="button button--secondary"&gt;Secondary Button&lt;/a&gt;
+                &lt;a href="#" class="button button--ghost"&gt;Ghost Button&lt;/a&gt;
             </codeBlock>
         </content-section>
     </div>

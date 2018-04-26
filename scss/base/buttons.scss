@@ -1,0 +1,42 @@
+.button {
+    border-radius: rem-calc(4);
+    display: inline-block;
+    padding: 0 rem-calc(16);
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    background-color: map-deep-get($colors, "gold", "default");
+    color: map-deep-get($colors, "white", "default");
+    border: 1px solid transparent;
+    transition: $transition-default;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    margin-right: rem-calc(16);
+    margin-bottom: rem-calc(32);
+
+    &:hover,
+    &:focus {
+        background-color: map-deep-get($colors, "gold", "light");
+    }
+
+    &--secondary {
+        background-color: map-deep-get($colors, "blue", "default");
+
+        &:hover,
+        &:focus {
+            background-color: map-deep-get($colors, "blue", "light");
+        }
+    }
+
+    &--ghost {
+        background-color: transparent;
+        border: 1px solid map-deep-get($colors, "gold", "default");
+        color: map-deep-get($colors, "gold", "default");
+
+        &:hover,
+        &:focus {
+            color: map-deep-get($colors, "white", "default");
+            background-color: map-deep-get($colors, "gold", "default");
+        }
+    }
+}

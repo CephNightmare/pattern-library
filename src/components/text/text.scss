@@ -4,4 +4,14 @@
     &--intro {
         font-size: rem-calc(21);
     }
+
+    /* stylelint-disable */
+    p {
+        margin-bottom: rem-calc(16);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    /* styleline-enable */
 }
