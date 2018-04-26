@@ -3,7 +3,7 @@
 @import "~foundation-sites/scss/global";
 @import "~foundation-sites/scss/foundation";
 
-@include foundation-grid(false);
+@include foundation-grid();
 
 @include foundation-visibility-classes;
 @include foundation-float-classes;

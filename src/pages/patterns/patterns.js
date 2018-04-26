@@ -10,12 +10,12 @@ export default {
                     path: '/patterns/grid-system'
                 },
                 {
-                    name: 'Layout Components',
-                    path: '/patterns/layout-components'
+                    name: 'Atoms',
+                    path: '/patterns/atoms'
                 },
                 {
-                    name: 'Typography',
-                    path: '/patterns/typography'
+                    name: 'Molecules',
+                    path: '/patterns/molecules'
                 }
             ]
         }

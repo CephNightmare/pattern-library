@@ -5,8 +5,7 @@ import layout from '@/layout/layout.vue'
 
 import patterns from '@/pages/patterns/patterns.vue'
 import gridSystem from '@/pages/patterns/Grid System/gridSystem.vue'
-import layoutcomponents from '@/pages/patterns/Layout components/layoutComponents.vue'
-import typography from '@/pages/patterns/Typography/typography.vue'
+import atoms from '@/pages/patterns/atoms/atoms.vue'
 
 Vue.use(Router);
 
@@ -31,14 +30,9 @@ const router =  new Router({
                             component: gridSystem,
                         },
                         {
-                            path: 'layout-components',
-                            name: 'Layout components',
-                            component: layoutcomponents,
-                        },
-                        {
-                            path: 'typography',
-                            name: 'Typography',
-                            component: typography,
+                            path: 'atoms',
+                            name: 'Atoms',
+                            component: atoms,
                         }
                     ]
                 }

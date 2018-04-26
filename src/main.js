@@ -7,8 +7,6 @@ import router from './router'
 import VueHighlightJS from 'vue-highlight.js'
 Vue.use(VueHighlightJS);
 
-import 'highlight.js/styles/dracula.css';
-
 Vue.config.productionTip = false;
 
 

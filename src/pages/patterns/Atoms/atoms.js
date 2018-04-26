@@ -6,7 +6,7 @@ import codeBlock from '@/components/code/code.vue';
 
 
 export default {
-    name: 'Patterns',
+    name: 'Atoms',
     data: function() {
         return {
         }

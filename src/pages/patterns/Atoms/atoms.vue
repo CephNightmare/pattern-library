@@ -2,9 +2,9 @@
     <div>
         <textBlock :isIntro="true">
             <p>
-                The current grid we utilize is Foundation 6 by ZURB. It contains many different components. We only use
-                the very basic functionalities Foundation provides. It uses the border-box property to collapse the
-                padding inside the element.
+                Atoms are the basic building blocks for our website. Atoms can be described as the most simple html
+                elements, such as a button, an input or a label. Furthermore, atoms can be more abstract, by defining a
+                variety of variables such as colors, margins and transitions.
             </p>
         </textBlock>
 
@@ -336,4 +336,4 @@
 
 </template>
 
-<script src="./gridSystem.js"></script>
+<script src="./atoms.js"></script>
