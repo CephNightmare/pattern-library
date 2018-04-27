@@ -6,6 +6,7 @@ import layout from '@/layout/layout.vue'
 import patterns from '@/pages/patterns/patterns.vue'
 import gridSystem from '@/pages/patterns/Grid System/gridSystem.vue'
 import atoms from '@/pages/patterns/atoms/atoms.vue'
+import molecules from '@/pages/patterns/molecules/molecules.vue'
 
 Vue.use(Router);
 
@@ -33,6 +34,11 @@ const router =  new Router({
                             path: 'atoms',
                             name: 'Atoms',
                             component: atoms,
+                        },
+                        {
+                            path: 'molecules',
+                            name: 'Molecules',
+                            component: molecules,
                         }
                     ]
                 }
