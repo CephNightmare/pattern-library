@@ -40,7 +40,7 @@
                 <p>
                     In order to use these grouped colors, you need to traverse through the array. Foundation proves to
                     be useful here, providing a mixing that gives you the option to retrieve the different colors by
-                    their respective key.
+                    their respective key by using map-deep-get().
                 </p>
             </textBlock>
 
@@ -92,11 +92,74 @@
             <a href="#" class="button" @click.prevent>Primary Button</a>
             <a href="#" class="button button--secondary" @click.prevent>Secondary Button</a>
             <a href="#" class="button button--ghost" @click.prevent>Ghost Button</a>
+
+            <note>
+                <div class="row">
+                    <div class="small-14 column">
+                        <codeBlock lang="html">
+                            &lt;a href="#" class="button"&gt;Primary Button&lt;/a&gt;
+                            &lt;a href="#" class="button button--secondary"&gt;Secondary Button&lt;/a&gt;
+                            &lt;a href="#" class="button button--ghost"&gt;Ghost Button&lt;/a&gt;
+                        </codeBlock>
+                    </div>
+                    <div class="small-10 column">
+                        <h3>Note</h3>
+
+                        <div class="text">
+                            <p>
+                                To style an input field or link, we use the button class. Any variant thereof uses the
+                                BEM methodology to define the different button variants. Multiple variants can be used
+                                to provide maximum flexibility.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </note>
+
+            <h3>Form Elements</h3>
+
+            <input-group></input-group>
+
             <codeBlock lang="html">
-                &lt;a href="#" class="button"&gt;Primary Button&lt;/a&gt;
-                &lt;a href="#" class="button button--secondary"&gt;Secondary Button&lt;/a&gt;
-                &lt;a href="#" class="button button--ghost"&gt;Ghost Button&lt;/a&gt;
+                &lt;div class="inputGroup"&gt;
+                &#9;&lt;div class="inputGroup__row"&gt;
+                &#9;&#9;&lt;label class="inputGroup__label" for="firstName"&gt;Label&lt;/label&gt;
+                &#9;&#9;&lt;input type="text" id="firstName" placeholder="John Doe" /&gt;
+                &#9;&lt;/div&gt;
+                &#9;&lt;div class="inputGroup__row"&gt;
+                &#9;&#9;&lt;label class="inputGroup__label" for="description"&gt;Label&lt;/label&gt;
+                &#9;&#9;&lt;textarea id="description" placeholder="A description of some kind">&lt;/textarea&gt;
+                &#9;&lt;/div&gt;
+                &lt;/div&gt;
             </codeBlock>
+
+            <codeBlock lang="scss">
+                .inputGroup {
+                &#9;margin-bottom: rem-calc(32);
+                &#9;$inputGroup: &;
+
+                &#9;&__row {
+                &#9;&#9;margin-top: rem-calc(16);
+                &#9;&#9;display: flex;
+                &#9;&#9;width: 100%;
+
+                &#9;&#9;&--vertical {
+                &#9;&#9;&#9;display: block;
+
+                &#9;&#9;&#9;#{$inputGroup}__label {
+                &#9;&#9;&#9;&#9;margin-bottom: rem-calc(8);
+                &#9;&#9;&#9;}
+                &#9;&#9;}
+                &#9;}
+
+                &#9;&__label {
+                &#9;&#9;margin-right: rem-calc(16);
+                &#9;&#9;float: left;
+                &#9;&#9;margin-top: rem-calc(8);
+                &#9;}
+                }
+            </codeBlock>
+
         </content-section>
     </div>
 

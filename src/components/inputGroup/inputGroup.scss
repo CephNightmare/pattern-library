@@ -1,0 +1,24 @@
+.inputGroup {
+    margin-bottom: rem-calc(32);
+    $inputGroup: &;
+
+    &__row {
+        margin-top: rem-calc(16);
+        display: flex;
+        width: 100%;
+
+        &--vertical {
+            display: block;
+
+            #{$inputGroup}__label {
+                margin-bottom: rem-calc(8);
+            }
+        }
+    }
+
+    &__label {
+        margin-right: rem-calc(16);
+        float: left;
+        margin-top: rem-calc(8);
+    }
+}

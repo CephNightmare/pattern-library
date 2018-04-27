@@ -3,6 +3,7 @@ import note from '@/components/note/note.vue';
 import textBlock from '@/components/text/text.vue';
 import codeBlock from '@/components/code/code.vue';
 import colors from '@/components/colors/colors.vue';
+import inputGroup from '@/components/inputGroup/inputGroup.vue';
 
 export default {
     name: 'Atoms',
@@ -72,6 +73,7 @@ export default {
         note,
         textBlock,
         codeBlock,
-        colors
+        colors,
+        inputGroup
     }
 }

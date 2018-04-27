@@ -1,0 +1,30 @@
+input {
+    border-radius: rem-calc(4);
+    height: rem-calc(40);
+    border: 1px solid map-deep-get($colors, "grey", "dark");
+    padding: 0 rem-calc(16);
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border: 1px solid map-deep-get($colors, "gold", "default");
+    }
+}
+
+textarea {
+    border-radius: rem-calc(4);
+    border: 1px solid map-deep-get($colors, "grey", "dark");
+    padding: rem-calc(8) rem-calc(16);
+    resize: vertical;
+    min-height: rem-calc(100);
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border: 1px solid map-deep-get($colors, "gold", "default");
+    }
+}
+
+label {
+    font-weight: 700;
+}

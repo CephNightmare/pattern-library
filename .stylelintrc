@@ -73,7 +73,6 @@
 
     "no-descending-specificity": true,
     "no-duplicate-selectors": true,
-    "no-eol-whitespace": true,
     "no-extra-semicolons": true,
     "no-invalid-double-slash-comments": true,
     "no-unknown-animations": true,
