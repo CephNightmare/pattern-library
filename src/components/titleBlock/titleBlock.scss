@@ -1,0 +1,18 @@
+.titleBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(16);
+
+    &__title {
+        margin: 0;
+    }
+
+    &__button {
+        margin-right: 0;
+        margin-left: rem-calc(16);
+    }
+
+    &__copyToClipboard {
+        margin: 0;
+    }
+}

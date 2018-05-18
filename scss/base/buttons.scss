@@ -1,6 +1,5 @@
 .button {
     border-radius: rem-calc(4);
-    display: inline-block;
     padding: 0 rem-calc(16);
     height: rem-calc(40);
     line-height: rem-calc(40);
@@ -12,11 +11,13 @@
     text-transform: capitalize;
     text-align: center;
     margin-right: rem-calc(16);
-    margin-bottom: rem-calc(32);
+    display: inline-flex;
+    white-space: nowrap;
 
     &:hover,
     &:focus {
         background-color: map-deep-get($colors, "gold", "light");
+        outline: none;
     }
 
     &--secondary {
@@ -37,6 +38,16 @@
         &:focus {
             color: map-deep-get($colors, "white", "default");
             background-color: map-deep-get($colors, "gold", "default");
+        }
+    }
+
+    &--icon {
+        position: relative;
+
+        svg {
+            width: rem-calc(20);
+            fill: map-deep-get($colors, "white", "default");
+            margin-left: rem-calc(12);
         }
     }
 }

@@ -19,9 +19,21 @@ $colors: (
 //
 // Transition defaults
 $transition-default-smoothing: ease-in-out;
-$transition-default-time: .2s;
+$transition-default-time: .3s;
 $transition-default: all $transition-default-time $transition-default-smoothing;
+
+$transition-cubic-smoothing: cubic-bezier(.2, 0, 0, 1);
+$transition-cubic-time: .2s;
+$transition-cubic: all $transition-cubic-time $transition-cubic-smoothing;
 
 //
 //Header
 $header-height: 80px;
+
+//
+// Border radius defaults
+$border-radius-default: 6px;
+
+//
+// Box shadow defaults
+$box-shadow-default: 0 5px 14px rgba(map-deep-get($colors, "black", "default"), .5);

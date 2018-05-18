@@ -1,6 +1,7 @@
 ﻿@mixin flex-align-center($spaceBetween: false) {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     @if ($spaceBetween) {
         justify-content: space-between;

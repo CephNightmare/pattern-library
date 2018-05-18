@@ -1,0 +1,148 @@
+.card {
+    color: map-deep-get($colors, "black", "default");
+    display: block;
+    margin: rem-calc(16) 0 rem-calc(40) 0;
+    position: relative;
+    width: 100%;
+    clear: both;
+    float: left;
+    $card: &;
+
+    &__imageWrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 2;
+            background-color: rgba(map-deep-get($colors, "black", "default"), .5);
+            opacity: 0;
+            transition: $transition-default;
+            border-radius: $border-radius-default;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        display: block;
+        border-radius: $border-radius-default;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__readMoreText {
+        float: left;
+    }
+
+    &__content {
+        padding: rem-calc(16) 0;
+        transition: $transition-default;
+        z-index: 3;
+        position: relative;
+    }
+
+    &__arrow {
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: $transition-default;
+        z-index: 3;
+
+        svg {
+            fill: map-deep-get($colors, "white", "default");
+        }
+    }
+
+    &--backgroundImage {
+        background-size: cover;
+        background-position: center;
+        border-radius: $border-radius-default;
+        color: map-deep-get($colors, "white", "default");
+        padding-bottom: rem-calc(64);
+        transition: $transition-default;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 2;
+            background-color: rgba(map-deep-get($colors, "black", "default"), .5);
+            transition: $transition-default;
+            border-radius: $border-radius-default;
+        }
+
+        #{$card}__content {
+            padding: rem-calc(16);
+        }
+
+        #{$card}__arrow {
+            position: absolute;
+            right: rem-calc(20);
+            bottom: rem-calc(20);
+            opacity: 1;
+            transform: translateX(0);
+            border: 1px solid map-deep-get($colors, "white", "default");
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            transition: $transition-default;
+
+            svg {
+                width: rem-calc(30);
+            }
+        }
+
+        &:hover, &:focus {
+            box-shadow: $box-shadow-default;
+
+            #{$card}__arrow {
+                background-color: map-deep-get($colors, "gold", "default");
+            }
+        }
+    }
+
+    &--whiteBG {
+        background-color: map-deep-get($colors, "white", "default");
+
+        #{$card}__image {
+            border-radius: $border-radius-default $border-radius-default 0 0;
+        }
+
+        #{$card}__content {
+            padding: rem-calc(16);
+            border: 1px solid map-deep-get($colors, "grey", "dark");
+            border-radius: 0 0 $border-radius-default $border-radius-default;
+        }
+
+        &:hover, &:focus {
+            #{$card}__content {
+                box-shadow: $box-shadow-default;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        #{$card}__imageWrapper {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        #{$card}__arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

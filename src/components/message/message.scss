@@ -1,0 +1,26 @@
+.message {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: rem-calc(24);
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: $transition-default;
+    text-align: center;
+
+    &__inner {
+        display: inline-block;
+        padding: rem-calc(16) rem-calc(32);
+        background-color: map-deep-get($colors, "blue", "dark");
+        color: map-deep-get($colors, "white", "default");
+        border-radius: rem-calc(50);
+    }
+
+    &--enter, &--leaveTo {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+}

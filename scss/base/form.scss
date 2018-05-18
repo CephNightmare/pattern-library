@@ -7,7 +7,16 @@ input {
 
     &:focus {
         outline: none;
-        border: 1px solid map-deep-get($colors, "gold", "default");
+        border: 1px solid map-deep-get($colors, "black", "default");
+    }
+}
+
+[type="search"] {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
     }
 }
 
@@ -21,10 +30,137 @@ textarea {
 
     &:focus {
         outline: none;
-        border: 1px solid map-deep-get($colors, "gold", "default");
+        border: 1px solid map-deep-get($colors, "black", "default");
     }
 }
 
 label {
     font-weight: 700;
+}
+
+.radioWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(8);
+    $radioWrapper: &;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__inputWrapper {
+        position: relative;
+        width: rem-calc(20);
+        height: rem-calc(20);
+        margin-right: rem-calc(8);
+        float: left;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: map-deep-get($colors, "white", "default");
+            border: 1px solid map-deep-get($colors, "grey", "dark");
+            display: block;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__inputDot {
+        position: absolute;
+        left: rem-calc(4);
+        top: rem-calc(4);
+        z-index: 2;
+        border-radius: 50%;
+        background-color: map-deep-get($colors, "black", "default");
+        width: rem-calc(12);
+        height: rem-calc(12);
+        opacity: 0;
+    }
+
+    &__input {
+        line-height: 1;
+        position: absolute;
+        left: rem-calc(-999);
+
+        &:checked {
+            + #{$radioWrapper}__inputDot {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__label {
+        font-size: rem-calc(15);
+        cursor: pointer;
+    }
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem-calc(8);
+    $checkboxWrapper: &;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__inputWrapper {
+        position: relative;
+        width: rem-calc(20);
+        height: rem-calc(20);
+        margin-right: rem-calc(8);
+        float: left;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            border-radius: rem-calc(4);
+            background-color: map-deep-get($colors, "white", "default");
+            border: 1px solid map-deep-get($colors, "grey", "dark");
+            display: block;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__inputDot {
+        position: absolute;
+        z-index: 2;
+        width: rem-calc(22);
+        left: rem-calc(2);
+        opacity: 0;
+        bottom: rem-calc(-6);
+
+        svg {
+            fill: map-deep-get($colors, "black", "default");
+        }
+    }
+
+    &__input {
+        line-height: 1;
+        position: absolute;
+        left: rem-calc(-999);
+
+        &:checked {
+            + #{$checkboxWrapper}__inputDot {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__label {
+        font-size: rem-calc(15);
+        cursor: pointer;
+    }
 }

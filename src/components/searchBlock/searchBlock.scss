@@ -1,0 +1,21 @@
+.searchBlock {
+    position: relative;
+    justify-self: right;
+
+    &__searchIcon {
+        width: rem-calc(14);
+        display: inline-block;
+        position: absolute;
+        right: rem-calc(10);
+        top: rem-calc(10);
+    }
+
+    &__searchInput {
+        width: rem-calc(100);
+        transition: $transition-default;
+
+        &:focus {
+            width: rem-calc(200);
+        }
+    }
+}

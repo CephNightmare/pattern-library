@@ -14,6 +14,7 @@ pre {
 
 ::selection {
     background-color: map-deep-get($colors, "gold", "default");
+    color: map-deep-get($colors, "white", "default");
 }
 
 .container {

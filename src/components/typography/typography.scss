@@ -1,0 +1,16 @@
+.typography {
+    &__row {
+        margin-bottom: rem-calc(16);
+        padding-bottom: rem-calc(16);
+        border-bottom: 1px dashed map-deep-get($colors, "grey", "dark");
+    }
+
+    &__data {
+        color: map-deep-get($colors, "grey", "dark");
+        font-size: rem-calc(20);
+    }
+
+    &__element {
+        margin: 0;
+    }
+}

@@ -1,12 +1,15 @@
 // Variables and sass helpers
 @import "abstracts/all";
 
-// base
-@import "base/all";
-
 // Grid (Foundation 6)
 @import "grid/settings";
 @import "grid/grid";
+
+// Layout specific styles
+@import "vendor/all";
+
+// base
+@import "base/all";
 
 // Layout specific styles
 @import "layout/all";

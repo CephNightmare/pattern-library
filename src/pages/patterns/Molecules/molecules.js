@@ -2,70 +2,68 @@ import contentSection from '@/components/contentSection/contentSection.vue';
 import note from '@/components/note/note.vue';
 import textBlock from '@/components/text/text.vue';
 import codeBlock from '@/components/code/code.vue';
-import colors from '@/components/colors/colors.vue';
-import inputGroup from '@/components/inputGroup/inputGroup.vue';
+import titleBlock from '@/components/titleBlock/titleBlock.vue';
+import copyToClipboard from '@/components/copyToClipboard/copyToClipboard.vue';
+import message from '@/components/message/message.vue';
+import hero from '@/components/hero/hero.vue';
+import card from '@/components/card/card.vue';
+
+import Blazy from 'blazy';
 
 export default {
     name: 'Molecules',
-    data: function() {
+    data: function () {
         return {
-            colors: [
-                {
-                    group: 'black',
-                    variant: 'default',
-                    hex: '#1E1E24'
-                },
-                {
-                    group: 'blue',
-                    variant: 'dark',
-                    hex: '#36446C'
-                },
-                {
-                    group: 'blue',
-                    variant: 'default',
-                    hex: '#7282B4'
-                },
-                {
-                    group: 'blue',
-                    variant: 'light',
-                    hex: '#BBC8F0'
-                },
-                {
-                    group: 'grey',
-                    variant: 'dark',
-                    hex: '#BBBBBB'
-                },
-                {
-                    group: 'grey',
-                    variant: 'default',
-                    hex: '#F5F5F5'
-                },
-                {
-                    group: 'white',
-                    variant: 'default',
-                    hex: '#FFFDFD'
-                },
-                {
-                    group: 'green',
-                    variant: 'default',
-                    hex: '#41B883'
-                },
-                {
-                    group: 'social',
-                    variant: 'facebook',
-                    hex: '#3B5998'
-                },
-                {
-                    group: 'social',
-                    variant: 'twitter',
-                    hex: '#1DA1F2'
-                },
-                {
-                    group: 'social',
-                    variant: 'linkedin',
-                    hex: '#0077B5'
+            showMessage: false,
+            messageText: ""
+        }
+    },
+    mounted: function () {
+        this.blazy();
+    },
+    methods: {
+        toggleMessage: function (value) {
+            let that = this;
+            that.showMessage = true;
+            that.messageText = value;
+
+            setTimeout(function () {
+                that.showMessage = false;
+                that.messageText = "";
+            }, 1500);
+        },
+        blazy: function () {
+            new Blazy({
+                breakpoints: [{
+                    width: 0,
+                    src: 'data-src-small'
+                }, {
+                    width: 640,
+                    src: 'data-src-medium'
+                }, {
+                    width: 1024,
+                    src: 'data-src-large'
+                }, {
+                    width: 1200,
+                    src: 'data-src-xlarge'
+                }, {
+                    width: 1440,
+                    src: 'data-src-xxlarge'
+                }],
+                success: function (ele) {
+                    // Image has loaded
+                    // Do your business here
                 }
-            ]
+                , error: function (ele, msg) {
+                    if (msg === 'missing') {
+                        console.log(msg);
+                    }
+                    else if (msg === 'invalid') {
+                        console.log(msg);
+                    }
+                }
+
+            });
         }
     },
     components: {
@@ -73,7 +71,10 @@ export default {
         note,
         textBlock,
         codeBlock,
-        colors,
-        inputGroup
+        titleBlock,
+        copyToClipboard,
+        message,
+        hero,
+        card,
     }
 }

@@ -4,10 +4,15 @@ import textBlock from '@/components/text/text.vue';
 import codeBlock from '@/components/code/code.vue';
 import colors from '@/components/colors/colors.vue';
 import inputGroup from '@/components/inputGroup/inputGroup.vue';
+import typography from '@/components/typography/typography.vue';
+import buttons from '@/components/buttons/buttons.vue';
+import titleBlock from '@/components/titleBlock/titleBlock.vue';
+import copyToClipboard from '@/components/copyToClipboard/copyToClipboard.vue';
+import message from '@/components/message/message.vue';
 
 export default {
     name: 'Atoms',
-    data: function() {
+    data: function () {
         return {
             colors: [
                 {
@@ -65,7 +70,21 @@ export default {
                     variant: 'linkedin',
                     hex: '#0077B5'
                 }
-            ]
+            ],
+            showMessage: false,
+            messageText: ""
+        }
+    },
+    methods: {
+        toggleMessage: function (value) {
+            let that = this;
+            that.showMessage = true;
+            that.messageText = value;
+
+            setTimeout( function() {
+                that.showMessage = false;
+                that.messageText = "";
+            }, 1500);
         }
     },
     components: {
@@ -74,6 +93,12 @@ export default {
         textBlock,
         codeBlock,
         colors,
-        inputGroup
+        inputGroup,
+        typography,
+        buttons,
+        titleBlock,
+        copyToClipboard,
+        message
     }
 }
+

@@ -1,0 +1,13 @@
+.copyToClipboard {
+    display: inline-block;
+    margin-bottom: rem-calc(16);
+
+    &__toCopy {
+        position: absolute;
+        left: rem-calc(-9999);
+    }
+
+    &--alignRight {
+        float: right;
+    }
+}

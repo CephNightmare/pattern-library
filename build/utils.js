@@ -34,6 +34,7 @@ exports.cssLoaders = function (options) {
         options: {
             resources: [
                 path.resolve(__dirname, '../scss/abstracts/_all.scss'),
+                path.resolve(__dirname, '../scss/grid/settings.scss'),
             ]
         }
     };

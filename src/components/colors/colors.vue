@@ -1,7 +1,7 @@
 <template>
     <div class="colors">
         <div class="row">
-            <div v-for="(color, index) in this.colors" class="small-6 column" :class="{'end': index === colors.length - 1}">
+            <div v-for="(color, index) in this.colors" class="small-12 medium-8 large-6 column" :class="{'end': index === colors.length - 1}">
                 <div class="colorBlock">
                     <div class="colorBlock__bg" v-bind:style="{ 'background-color': color.hex }"></div>
                     <div class="colorBlock__content">

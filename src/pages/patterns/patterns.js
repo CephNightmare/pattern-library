@@ -16,6 +16,10 @@ export default {
                 {
                     name: 'Molecules',
                     path: '/patterns/molecules'
+                },
+                {
+                    name: 'Organisms',
+                    path: '/patterns/organisms'
                 }
             ]
         }

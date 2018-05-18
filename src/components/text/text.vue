@@ -10,4 +10,3 @@
     // Import Main styles for this application
     @import 'text';
 </style>
-

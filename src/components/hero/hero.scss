@@ -1,0 +1,59 @@
+$hero-height: ("small": rem-calc(350), "medium": rem-calc(550), "large": rem-calc(700));
+
+.hero {
+    min-height: map_get($hero-height, small);
+    height: 85vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../assets/images/hero.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: rem-calc(32);
+
+    @media only screen and (min-width: map_get($breakpoints, medium)) {
+        min-height: map_get($hero-height, medium);
+    }
+    @media only screen and (min-width: map_get($breakpoints, large)) {
+        min-height: map_get($hero-height, large);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(map-deep-get($colors, "black", "default"), .5);
+    }
+
+    &__img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+    }
+
+    &__title {
+        color: map-deep-get($colors, "white", "default");
+    }
+
+    &__text {
+        color: map-deep-get($colors, "white", "default");
+    }
+}
